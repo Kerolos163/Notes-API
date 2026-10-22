@@ -1,0 +1,33 @@
+[project]
+name = "notes-api"
+version = "1"
+description = ""
+authors = [
+    {name = "kerolos",email = "kokoessa951@gmail.com"}
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (>=0.149.0,<0.150.0)",
+    "uvicorn[standard] (>=0.54.0,<0.55.0)",
+    "sqlalchemy[asyncio] (>=2.1.6,<3.0.0)",
+    "asyncpg (>=0.32.0,<0.33.0)",
+    "python-dotenv (>=1.2.4,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
